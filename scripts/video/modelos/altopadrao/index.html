@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- GERADO por scripts/video/modelos/gerar_modelos.py: editar lá. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-400.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-700.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0b0d; }
+      :root { --cor: #17a36b; }
+      .oculto { display: none !important; }
+      .cena { position: absolute; inset: 0; overflow: hidden; background: #0b0b0d; }
+      .gl { position: absolute; display: block; }
+      .fonte { position: absolute; left: 0; top: 0; width: 4px; height: 4px; opacity: 0; }
+      .veu { position: absolute; inset: 0; }
+      .cor { color: var(--cor); }
+      .p { display: inline-block; margin-right: 0.16em; }
+      .marca { position: absolute; z-index: 40; font: 700 34px "Figtree", sans-serif; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
+      .marca img { display: block; height: 76px; padding: 12px 18px; background: #fff; border-radius: 14px; }
+      .ressalva { position: absolute; left: 60px; bottom: 40px; z-index: 40; font: 400 24px "Figtree", sans-serif; color: rgba(255,255,255,0.6); }
+      .placa img { display: block; width: 100%; }
+      .placa.sem-logo { background: none !important; padding: 0 !important; left: 60px !important; right: 60px; width: auto !important; margin-left: 0 !important; text-align: center; font: 400 110px/1 "Anton", sans-serif; color: #fff; text-transform: uppercase; }
+      :root { --ouro: #c9a66b; }
+      .gl { left: 90px; top: 250px; width: 900px; height: 1150px; }
+      .moldura { position: absolute; left: 60px; top: 220px; width: 960px; height: 1210px; border: 2px solid var(--ouro); }
+      .caps { position: absolute; left: 0; right: 0; text-align: center; font: 400 34px "Figtree", sans-serif; letter-spacing: 0.5em; text-transform: uppercase; color: var(--ouro); white-space: nowrap; }
+      .serif { position: absolute; left: 60px; right: 60px; text-align: center; font: 400 120px/1.08 "Playfair Display", serif; color: #f4efe6; }
+      .serif .cor { font-style: italic; color: var(--ouro); }
+      .linha { position: absolute; left: 50%; margin-left: -120px; width: 240px; height: 2px; background: var(--ouro); }
+      .fato { position: absolute; left: 60px; right: 60px; top: 1500px; text-align: center; font: 400 92px/1.1 "Playfair Display", serif; color: #f4efe6; white-space: nowrap; }
+      .apoio { position: absolute; left: 0; right: 0; top: 1640px; text-align: center; font: 400 32px "Figtree", sans-serif; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ouro); white-space: nowrap; }
+      .botao { position: absolute; left: 190px; right: 190px; padding: 34px 0 36px; border: 2px solid var(--ouro); text-align: center; font: 400 56px "Figtree", sans-serif; letter-spacing: 0.06em; color: #f4efe6; }
+      .placa { position: absolute; left: 50%; margin-left: -190px; width: 380px; padding: 34px; background: #f4efe6; }
+      .placa.sem-logo { font: 400 90px/1.1 "Playfair Display", serif !important; text-transform: none !important; color: #f4efe6 !important; }
+      .marca { left: 0; right: 0; text-align: center; color: var(--ouro); letter-spacing: 0.4em; font-weight: 400; }
+      .marca img { display: inline-block; height: 64px; border-radius: 0; background: #f4efe6; }
+      .ressalva { left: 0; right: 0; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="18.4" data-width="1080" data-height="1920">
+      <div id="a" class="cena clip" data-start="0" data-duration="4.2" data-track-index="1">
+        <div id="a-c" class="caps" style="top: 700px"></div>
+        <div id="a-l" class="linha" style="top: 790px"></div>
+        <div id="a-n" class="serif" style="top: 850px"></div>
+        <div id="a-s" class="caps" style="top: 1190px; color: #f4efe6; letter-spacing: 0.4em"></div>
+      </div>
+      <div id="b" class="cena clip" data-start="4.0" data-duration="3.6" data-track-index="2">
+        <canvas id="b-gl" class="gl" width="900" height="1150" style=""></canvas>
+        <div id="b-m" class="moldura"></div>
+        <div id="b-t" class="fato"></div>
+        <div id="b-s" class="apoio"></div>
+      </div>
+      <div id="c" class="cena clip" data-start="7.4" data-duration="3.6" data-track-index="1">
+        <canvas id="c-gl" class="gl" width="900" height="1150" style=""></canvas>
+        <div id="c-m" class="moldura"></div>
+        <div id="c-t" class="fato"></div>
+        <div id="c-s" class="apoio"></div>
+      </div>
+      <div id="e" class="cena clip" data-start="10.8" data-duration="3.6" data-track-index="2">
+        <canvas id="e-gl" class="gl" width="900" height="1150" style=""></canvas>
+        <div id="e-m" class="moldura"></div>
+        <div id="e-t" class="fato"></div>
+        <div id="e-s" class="apoio"></div>
+      </div>
+      <div id="z" class="cena clip" data-start="14.2" data-duration="4.2" data-track-index="2">
+        <div id="z-l" class="placa" style="top: 300px"></div>
+        <div id="z-n" class="serif" style="top: 700px; font-size: 104px"></div>
+        <div id="z-x" class="linha" style="top: 1010px"></div>
+        <div id="z-q" class="caps" style="top: 1080px; color: #f4efe6; letter-spacing: 0.3em"></div>
+        <div id="z-b" class="botao" style="top: 1260px"></div>
+      </div>
+      <div id="m" class="marca clip" style="top: 100px" data-start="4.0" data-duration="10.2" data-track-index="6"></div>
+      <div id="r" class="ressalva clip" data-start="4.0" data-duration="10.2" data-track-index="7"></div>
+      <audio id="trilha" src="assets/bgm/ambiente.m4a" data-start="0" data-duration="18.4" data-volume="0.6" data-track-index="11"></audio>
+      <audio id="sfx-00" src="assets/sfx/vento.m4a" data-start="3.7" data-duration="0.60" data-volume="0.25" data-track-index="12"></audio>
+      <audio id="sfx-01" src="assets/sfx/vento.m4a" data-start="7.1" data-duration="0.60" data-volume="0.25" data-track-index="13"></audio>
+      <audio id="sfx-02" src="assets/sfx/vento.m4a" data-start="10.5" data-duration="0.60" data-volume="0.25" data-track-index="14"></audio>
+      <audio id="sfx-03" src="assets/sfx/sino.m4a" data-start="11.6" data-duration="1.00" data-volume="0.3" data-track-index="15"></audio>
+      <audio id="sfx-04" src="assets/sfx/vento.m4a" data-start="13.9" data-duration="0.60" data-volume="0.25" data-track-index="12"></audio>
+    </div>
+    <div aria-hidden="true">
+      <img id="foto-1" class="fonte" src="assets/fotos/1.jpg" alt="" /><img id="prof-1" class="fonte" src="assets/fotos/1-p.png" alt="" />
+      <img id="foto-2" class="fonte" src="assets/fotos/2.jpg" alt="" /><img id="prof-2" class="fonte" src="assets/fotos/2-p.png" alt="" />
+      <img id="foto-3" class="fonte" src="assets/fotos/3.jpg" alt="" /><img id="prof-3" class="fonte" src="assets/fotos/3-p.png" alt="" />
+      <img id="foto-4" class="fonte" src="assets/fotos/4.jpg" alt="" /><img id="prof-4" class="fonte" src="assets/fotos/4-p.png" alt="" />
+      <img id="foto-5" class="fonte" src="assets/fotos/5.jpg" alt="" /><img id="prof-5" class="fonte" src="assets/fotos/5-p.png" alt="" />
+    </div>
+    <!-- Dados de EXEMPLO. O gerador troca ESTE bloco pelos dados do pedido
+         (src/lib/video/modelo/contrato.ts, `preencherHtml`). -->
+    <script id="dados" type="application/json">{"selo":"Em construção","nome":"Reserva Barueri","lugar":{"principal":"Barueri","apoio":"Jardim Tupanci"},"gancho":"com 78 m²?","destaques":[{"grande":"2 ou 3","cor":"dorms","apoio":"com suíte e 2 vagas"},{"grande":"58 a 78","cor":"m²","apoio":"de área privativa"}],"preco":{"valor":"589","unidade":"mil"},"entrega":{"rotulo":"Entrega prevista","grande":"Dezembro","cor":"2027"},"extras":["Piscina","Academia","Salão de festas"],"corretor":"Ana Lima","creci":"CRECI 234800","fone":"(11) 99999-0000","ressalva":"Imagens meramente ilustrativas","outro":null,"marca":"Aretz Imobi","temLogo":false,"cor":"#17a36b","fotos":[{"aspecto":1.415,"rotulo":"Fachada"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Lazer"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Fachada"}]}</script>
+    <script src="assets/comum.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const d = E.d;
+      const a = E.animar(tl);
+      const [n1, n2] = E.nomeEmDuas();
+      E.texto("a-c", [d.lugar.principal, d.lugar.apoio].filter(Boolean).join(" · ")); E.duas("a-n", n1, n2, 0); E.texto("a-s", d.selo);
+      const d0 = d.destaques[0], d1 = d.destaques[1];
+      const passos = [
+        [E.fraseDoDestaque(0), d0 ? d0.apoio : ""],
+        [E.fraseDoDestaque(1), d1 ? d1.apoio : ""],
+        [d.preco ? "A partir de R$ " + d.preco.valor + " " + d.preco.unidade : (d.entrega ? d.entrega.grande + " " + d.entrega.cor : ""), d.preco && d.entrega ? [d.entrega.rotulo, d.entrega.grande, d.entrega.cor].filter(Boolean).join(" ") : (d.entrega && !d.preco ? d.entrega.rotulo : "")],
+      ];
+      ["b", "c", "e"].forEach((id, i) => { E.linha(id + "-t", passos[i][0], 960, 0.46); E.linha(id + "-s", passos[i][1], 1000, 1.0); });
+      E.duas("z-n", "Agende", "uma visita", 0); E.marca("z-l"); E.marca("m"); E.texto("r", d.ressalva);
+      E.linha("z-q", [d.corretor, d.creci].filter(Boolean).join(" · "), 1000, 0.95); E.texto("z-b", d.fone);
+      tl.fromTo("#a-c", { opacity: 0, scaleX: 1.25 }, { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out" }, 0.3);
+      tl.fromTo("#a-l", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.9);
+      tl.fromTo("#a-n", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1, ease: "power2.out" }, 1.3);
+      a.some("#a-s", 2.4, 0.8);
+      a.some("#b", 4.0, 0.7); E.camera(tl, "b-gl", 1, 4.0, 3.6, { lado: 0.4, px: -0.014 }, { lado: 0.6, zoom: 1.07, px: 0.014, dolly: 0.12, luz: 1.7 });
+      tl.fromTo("#b-m", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" }, 4.3); a.sobe("#b-t", 4.7, 0.9); a.some("#b-s", 5.1, 0.8);
+      a.some("#c", 7.4, 0.7); E.camera(tl, "c-gl", 2, 7.4, 3.6, { lado: 0.6, px: 0.014 }, { lado: 0.4, zoom: 1.07, px: -0.014, dolly: 0.12, luz: 1.7 });
+      tl.fromTo("#c-m", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" }, 7.7); a.sobe("#c-t", 8.1, 0.9); a.some("#c-s", 8.5, 0.8);
+      a.some("#e", 10.8, 0.7); E.camera(tl, "e-gl", 3, 10.8, 3.6, { lado: 0.4, px: -0.014 }, { lado: 0.6, zoom: 1.07, px: 0.014, dolly: 0.12, luz: 1.7 });
+      tl.fromTo("#e-m", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 1.0, ease: "power2.out" }, 11.100000000000001); a.sobe("#e-t", 11.5, 0.9); a.some("#e-s", 11.9, 0.8);
+      a.some("#z", 14.2, 0.7); a.some("#z-l", 14.6, 0.8);
+      tl.fromTo("#z-n", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 15.0);
+      tl.fromTo("#z-x", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, 15.6);
+      a.some("#z-q", 16.0, 0.7); a.sobe("#z-b", 16.4, 0.8);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

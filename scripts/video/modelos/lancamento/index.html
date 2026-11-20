@@ -1,0 +1,156 @@
+<!doctype html>
+<!-- GERADO por scripts/video/modelos/gerar_modelos.py: editar lá. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-400.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-700.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #070d18; }
+      :root { --cor: #17a36b; }
+      .oculto { display: none !important; }
+      .cena { position: absolute; inset: 0; overflow: hidden; background: #070d18; }
+      .gl { position: absolute; display: block; }
+      .fonte { position: absolute; left: 0; top: 0; width: 4px; height: 4px; opacity: 0; }
+      .veu { position: absolute; inset: 0; }
+      .cor { color: var(--cor); }
+      .p { display: inline-block; margin-right: 0.16em; }
+      .marca { position: absolute; z-index: 40; font: 700 34px "Figtree", sans-serif; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
+      .marca img { display: block; height: 76px; padding: 12px 18px; background: #fff; border-radius: 14px; }
+      .ressalva { position: absolute; left: 60px; bottom: 40px; z-index: 40; font: 400 24px "Figtree", sans-serif; color: rgba(255,255,255,0.6); }
+      .placa img { display: block; width: 100%; }
+      .placa.sem-logo { background: none !important; padding: 0 !important; left: 60px !important; right: 60px; width: auto !important; margin-left: 0 !important; text-align: center; font: 400 110px/1 "Anton", sans-serif; color: #fff; text-transform: uppercase; }
+      .veu { background: linear-gradient(180deg, rgba(7,13,24,0.5) 0%, rgba(7,13,24,0) 26%, rgba(7,13,24,0) 62%, #070d18 100%); }
+      .slam { position: absolute; left: 60px; right: 60px; font: 400 190px/0.98 "Anton", sans-serif; color: #f5f7fb; text-transform: uppercase; }
+      .palco { position: absolute; inset: 0; }
+      .bloco { display: inline-block; padding: 4px 30px 14px; background: var(--cor); color: #fff; white-space: nowrap; }
+      .fita { position: absolute; left: 60px; padding: 12px 28px 14px; background: #f5f7fb; color: #070d18; font: 700 36px "Figtree", sans-serif; letter-spacing: 0.16em; text-transform: uppercase; }
+      .sub { position: absolute; left: 60px; right: 60px; font: 700 56px/1.15 "Figtree", sans-serif; color: #f5f7fb; }
+      .item { position: absolute; left: 60px; display: flex; align-items: center; gap: 26px; font: 400 100px/1 "Anton", sans-serif; color: #f5f7fb; text-transform: uppercase; white-space: nowrap; }
+      .item i { width: 26px; height: 90px; background: var(--cor); display: block; }
+      .cortina { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--cor); z-index: 50; }
+      .placa { position: absolute; left: 50%; margin-left: -220px; width: 440px; padding: 38px; background: #fff; border-radius: 32px; }
+      .quem { position: absolute; left: 0; right: 0; text-align: center; font: 700 58px "Figtree", sans-serif; color: #fff; }
+      .quem small { display: block; margin-top: 8px; font: 400 38px "Figtree", sans-serif; color: #c2cad8; }
+      .zap { position: absolute; left: 110px; right: 110px; padding: 38px 0 42px; border-radius: 999px; background: var(--cor); text-align: center; font: 700 68px "Figtree", sans-serif; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="19.8" data-width="1080" data-height="1920">
+      <div id="a" class="cena clip" data-start="0" data-duration="4.1" data-track-index="1">
+        <canvas id="a-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas><div class="veu"></div>
+        <div id="a-t" class="slam" style="top: 980px"></div>
+        <div id="a-m" class="slam" style="top: 1420px; font-size: 150px"><span id="a-g" class="bloco"></span></div>
+      </div>
+      <div id="b" class="cena clip" data-start="3.95" data-duration="2.4" data-track-index="2">
+        <canvas id="b-gl" class="gl" width="1080" height="1180" style="left: 0; top: 0; width: 1080px; height: 1180px"></canvas><div class="veu"></div>
+        <div id="b-s" class="fita" style="top: 1130px"></div>
+        <div id="b-t" class="slam" style="top: 1250px; font-size: 176px"></div>
+        <div id="b-l" class="sub" style="top: 1660px"></div>
+      </div>
+      <div id="c" class="cena clip" data-start="6.2" data-duration="3.4" data-track-index="1">
+        <canvas id="c-gl" class="gl" width="1080" height="1080" style="left: 0; top: 0; width: 1080px; height: 1080px"></canvas><div class="veu"></div>
+        <div id="c-1" class="item" style="top: 1130px"><i></i><span id="c-1t"></span></div>
+        <div id="c-2" class="item" style="top: 1300px"><i></i><span id="c-2t"></span></div>
+        <div id="c-3" class="item" style="top: 1470px"><i></i><span id="c-3t"></span></div>
+        <div id="c-4" class="sub" style="top: 1660px"></div>
+      </div>
+      <div id="d" class="cena clip" data-start="9.45" data-duration="3.4" data-track-index="2">
+        <canvas id="d-gl" class="gl" width="1080" height="1080" style="left: 0; top: 0; width: 1080px; height: 1080px"></canvas><div class="veu"></div>
+        <div id="d-s" class="fita" style="top: 1130px">A partir de</div>
+        <div id="d-p" class="slam" style="top: 1270px; font-size: 190px"><span id="d-v" class="bloco"></span></div>
+        <div id="d-l" class="sub" style="top: 1640px"></div>
+      </div>
+      <div id="e" class="cena clip" data-start="12.7" data-duration="3.5" data-track-index="1">
+        <canvas id="e-gl" class="gl" width="1080" height="1080" style="left: 0; top: 0; width: 1080px; height: 1080px"></canvas><div class="veu"></div>
+        <div id="e-s" class="fita" style="top: 1130px"></div>
+        <div id="e-t" class="slam" style="top: 1260px; font-size: 220px"></div>
+      </div>
+      <div id="z" class="cena clip" data-start="16.05" data-duration="3.75" data-track-index="2">
+        <div id="z-l" class="placa" style="top: 250px"></div>
+        <div class="palco"><div id="z-t" class="slam" style="top: 650px; left: 60px; right: 60px; text-align: center; font-size: 200px"></div></div>
+        <div id="z-q" class="quem" style="top: 1240px"><span id="z-q1"></span><small id="z-q2"></small></div>
+        <div id="z-z" class="zap" style="top: 1440px"></div>
+      </div>
+      <div id="k1" class="cortina clip" data-start="3.7" data-duration="0.7" data-track-index="5"></div>
+      <div id="k2" class="cortina clip" data-start="5.95" data-duration="0.7" data-track-index="5"></div>
+      <div id="k3" class="cortina clip" data-start="9.2" data-duration="0.7" data-track-index="5"></div>
+      <div id="k4" class="cortina clip" data-start="12.45" data-duration="0.7" data-track-index="5"></div>
+      <div id="k5" class="cortina clip" data-start="15.8" data-duration="0.7" data-track-index="5"></div>
+      <div id="m" class="marca clip" style="right: 50px; top: 60px" data-start="0" data-duration="16.05" data-track-index="6"></div>
+      <div id="r" class="ressalva clip" data-start="0" data-duration="16.05" data-track-index="7"></div>
+      <audio id="trilha" src="assets/bgm/pulso.m4a" data-start="0" data-duration="19.8" data-volume="0.5" data-track-index="11"></audio>
+      <audio id="sfx-00" src="assets/sfx/clique.m4a" data-start="0.3" data-duration="0.07" data-volume="0.7" data-track-index="12"></audio>
+      <audio id="sfx-01" src="assets/sfx/clique.m4a" data-start="0.62" data-duration="0.07" data-volume="0.7" data-track-index="13"></audio>
+      <audio id="sfx-02" src="assets/sfx/impacto.m4a" data-start="0.95" data-duration="1.00" data-volume="0.9" data-track-index="14"></audio>
+      <audio id="sfx-03" src="assets/sfx/estouro.m4a" data-start="2.35" data-duration="0.16" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-04" src="assets/sfx/vento.m4a" data-start="3.65" data-duration="0.60" data-volume="0.6" data-track-index="12"></audio>
+      <audio id="sfx-05" src="assets/sfx/impacto.m4a" data-start="4.35" data-duration="1.00" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-06" src="assets/sfx/vento.m4a" data-start="5.9" data-duration="0.60" data-volume="0.5" data-track-index="14"></audio>
+      <audio id="sfx-07" src="assets/sfx/estouro.m4a" data-start="6.6" data-duration="0.16" data-volume="0.5" data-track-index="15"></audio>
+      <audio id="sfx-08" src="assets/sfx/estouro.m4a" data-start="7.55" data-duration="0.16" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="sfx-09" src="assets/sfx/estouro.m4a" data-start="8.45" data-duration="0.16" data-volume="0.5" data-track-index="13"></audio>
+      <audio id="sfx-10" src="assets/sfx/vento.m4a" data-start="9.15" data-duration="0.60" data-volume="0.5" data-track-index="14"></audio>
+      <audio id="sfx-11" src="assets/sfx/sino.m4a" data-start="10.9" data-duration="1.00" data-volume="0.5" data-track-index="15"></audio>
+      <audio id="sfx-12" src="assets/sfx/vento.m4a" data-start="12.4" data-duration="0.60" data-volume="0.5" data-track-index="12"></audio>
+      <audio id="sfx-13" src="assets/sfx/clique.m4a" data-start="13.3" data-duration="0.07" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-14" src="assets/sfx/impacto.m4a" data-start="13.8" data-duration="1.00" data-volume="0.6" data-track-index="14"></audio>
+      <audio id="sfx-15" src="assets/sfx/vento.m4a" data-start="15.75" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-16" src="assets/sfx/clique.m4a" data-start="16.45" data-duration="0.07" data-volume="0.7" data-track-index="12"></audio>
+      <audio id="sfx-17" src="assets/sfx/impacto.m4a" data-start="16.95" data-duration="1.00" data-volume="0.8" data-track-index="13"></audio>
+      <audio id="sfx-18" src="assets/sfx/sino.m4a" data-start="18.2" data-duration="1.00" data-volume="0.4" data-track-index="14"></audio>
+    </div>
+    <div aria-hidden="true">
+      <img id="foto-1" class="fonte" src="assets/fotos/1.jpg" alt="" /><img id="prof-1" class="fonte" src="assets/fotos/1-p.png" alt="" />
+      <img id="foto-2" class="fonte" src="assets/fotos/2.jpg" alt="" /><img id="prof-2" class="fonte" src="assets/fotos/2-p.png" alt="" />
+      <img id="foto-3" class="fonte" src="assets/fotos/3.jpg" alt="" /><img id="prof-3" class="fonte" src="assets/fotos/3-p.png" alt="" />
+      <img id="foto-4" class="fonte" src="assets/fotos/4.jpg" alt="" /><img id="prof-4" class="fonte" src="assets/fotos/4-p.png" alt="" />
+      <img id="foto-5" class="fonte" src="assets/fotos/5.jpg" alt="" /><img id="prof-5" class="fonte" src="assets/fotos/5-p.png" alt="" />
+    </div>
+    <!-- Dados de EXEMPLO. O gerador troca ESTE bloco pelos dados do pedido
+         (src/lib/video/modelo/contrato.ts, `preencherHtml`). -->
+    <script id="dados" type="application/json">{"selo":"Em construção","nome":"Reserva Barueri","lugar":{"principal":"Barueri","apoio":"Jardim Tupanci"},"gancho":"com 78 m²?","destaques":[{"grande":"2 ou 3","cor":"dorms","apoio":"com suíte e 2 vagas"},{"grande":"58 a 78","cor":"m²","apoio":"de área privativa"}],"preco":{"valor":"589","unidade":"mil"},"entrega":{"rotulo":"Entrega prevista","grande":"Dezembro","cor":"2027"},"extras":["Piscina","Academia","Salão de festas"],"corretor":"Ana Lima","creci":"CRECI 234800","fone":"(11) 99999-0000","ressalva":"Imagens meramente ilustrativas","outro":null,"marca":"Aretz Imobi","temLogo":false,"cor":"#17a36b","fotos":[{"aspecto":1.415,"rotulo":"Fachada"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Lazer"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Fachada"}]}</script>
+    <script src="assets/comum.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const d = E.d;
+      const a = E.animar(tl);
+      const [n1, n2] = E.nomeEmDuas();
+      E.duas("a-t", "Morar em", d.lugar.principal, 940); E.texto("a-g", d.gancho) || E.el("a-m").classList.add("oculto");
+      E.texto("b-s", d.selo); E.duas("b-t", n1, n2, 940); E.texto("b-l", [d.lugar.principal, d.lugar.apoio].filter(Boolean).join(" · "));
+      const itens = [E.fraseDoDestaque(0), d.destaques[0] ? d.destaques[0].apoio : "", E.fraseDoDestaque(1)].filter(Boolean);
+      ["c-1", "c-2", "c-3"].forEach((id, i) => { E.linha(id + "t", itens[i] || "", 880, 0.5) || E.el(id).classList.add("oculto"); });
+      E.texto("c-4", d.destaques[1] ? d.destaques[1].apoio : "");
+      if (!E.preco("d-v")) { E.el("d-s").classList.add("oculto"); E.el("d-p").classList.add("oculto"); }
+      E.texto("d-l", d.nome);
+      E.texto("e-s", d.entrega ? d.entrega.rotulo : ""); E.duas("e-t", d.entrega ? d.entrega.grande : "", d.entrega ? d.entrega.cor : "", 940);
+      E.duas("z-t", "Chama no", "WhatsApp", 940); E.marca("m"); E.texto("r", d.ressalva);
+      E.marca("z-l"); E.texto("z-q1", d.corretor); E.texto("z-q2", d.creci); E.texto("z-z", d.fone);
+      E.camera(tl, "a-gl", 1, 0, 4.1, { lado: 0.35, zoom: 1.0, px: -0.011, py: 0.007, noite: 0.9, luz: -0.4 }, { lado: 0.5, zoom: 1.1, px: 0.016, py: -0.005, dolly: 0.13, luz: 1.7 });
+      E.camera(tl, "b-gl", 2, 3.95, 2.4, { lado: 0.3, px: -0.015 }, { lado: 0.6, zoom: 1.06, px: 0.015, dolly: 0.1 });
+      E.camera(tl, "c-gl", 3, 6.2, 3.4, { lado: 0.7, px: 0.018 }, { lado: 0.35, zoom: 1.06, px: -0.018, dolly: 0.12, luz: 1.7 });
+      E.camera(tl, "d-gl", 4, 9.45, 3.4, { lado: 0.3, px: -0.018 }, { lado: 0.65, zoom: 1.06, px: 0.018, dolly: 0.12 });
+      E.camera(tl, "e-gl", 5, 12.7, 3.5, { lado: 0.6, px: 0.012, py: 0.01 }, { lado: 0.4, zoom: 1.1, px: -0.012, py: -0.01, dolly: 0.12, luz: 1.7 });
+      [["#k1", 3.7], ["#k2", 5.95], ["#k3", 9.2], ["#k4", 12.45], ["#k5", 15.8]].forEach(([k, t], i) => {
+        const de = i % 2 ? -1080 : 1080;
+        tl.fromTo(k, { x: de }, { x: 0, duration: 0.26, ease: "power3.in" }, t);
+        tl.to(k, { x: -de, duration: 0.3, ease: "power3.out" }, t + 0.32);
+      });
+      a.slam("#a-t .p", 0.3, 0.32);
+      tl.fromTo("#a-m", { opacity: 0, scale: 0.4, rotation: -6 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.3, ease: "back.out(2.6)" }, 2.35);
+      a.pulsa("#a-m", 3.0);
+      a.entra("#b-s", 4.3); a.slam("#b-t .p", 4.35, 0.3); a.sobe("#b-l", 5.2);
+      a.entra("#c-1", 6.6); a.entra("#c-2", 7.55); a.entra("#c-3", 8.45); a.sobe("#c-4", 8.8);
+      a.entra("#d-s", 9.85); a.pop("#d-p", 10.2); a.conta("d-v", 10.2); a.pulsa("#d-p", 10.9); a.sobe("#d-l", 11.4);
+      a.entra("#e-s", 13.1); a.slam("#e-t .p", 13.3, 0.5);
+      tl.fromTo("#z-l", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 16.25);
+      a.slam("#z-t .p", 16.45, 0.25); a.sobe("#z-q", 17.3); a.pop("#z-z", 17.7); a.pulsa("#z-z", 18.3, 3);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

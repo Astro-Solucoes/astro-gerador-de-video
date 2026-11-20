@@ -1,0 +1,280 @@
+<!doctype html>
+<!-- GERADO por scripts/video/modelos/gerar_modelos.py: editar lá. -->
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-400.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-700.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #050912; }
+      :root { --cor: #17a36b; }
+      .oculto { display: none !important; }
+      .cena { position: absolute; inset: 0; overflow: hidden; background: #050912; }
+      .gl { position: absolute; display: block; }
+      .fonte { position: absolute; left: 0; top: 0; width: 4px; height: 4px; opacity: 0; }
+      .veu { position: absolute; inset: 0; }
+      .cor { color: var(--cor); }
+      .p { display: inline-block; margin-right: 0.16em; }
+      .marca { position: absolute; z-index: 40; font: 700 34px "Figtree", sans-serif; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
+      .marca img { display: block; height: 76px; padding: 12px 18px; background: #fff; border-radius: 14px; }
+      .ressalva { position: absolute; left: 60px; bottom: 40px; z-index: 40; font: 400 24px "Figtree", sans-serif; color: rgba(255,255,255,0.6); }
+      .placa img { display: block; width: 100%; }
+      .placa.sem-logo { background: none !important; padding: 0 !important; left: 60px !important; right: 60px; width: auto !important; margin-left: 0 !important; text-align: center; font: 400 110px/1 "Anton", sans-serif; color: #fff; text-transform: uppercase; }
+      .veu { background: linear-gradient(180deg, rgba(5,9,18,0.45) 0%, rgba(5,9,18,0) 20%, rgba(5,9,18,0) 48%, rgba(5,9,18,0.9) 86%); }
+      .k { position: absolute; left: 70px; top: 1090px; padding: 12px 28px 14px; background: #fff; color: #050912; font: 700 36px "Figtree", sans-serif; letter-spacing: 0.16em; text-transform: uppercase; }
+      .t { position: absolute; left: 70px; right: 70px; top: 1200px; font: 400 230px/0.94 "Anton", sans-serif; color: #fff; text-transform: uppercase; transform-origin: 0% 50%; }
+      .s { position: absolute; left: 70px; right: 70px; top: 1650px; font: 700 58px "Figtree", sans-serif; color: #fff; }
+      .palco { position: absolute; inset: 0; perspective: 1100px; }
+      .borrao { position: absolute; left: -200px; top: 0; width: 1480px; height: 1920px; max-width: none; object-fit: fill; }
+      .barra { position: absolute; left: 0; top: 0; height: 10px; width: 1080px; background: var(--cor); transform-origin: left center; z-index: 45; }
+      .cortina { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: var(--cor); z-index: 50; }
+      .flash { position: absolute; inset: 0; background: #fff; z-index: 60; }
+      .t { text-shadow: 1px 1px 0 #cfd6e2, 2px 2px 0 #c2cad8, 3px 3px 0 #b5bece, 4px 4px 0 #a8b2c4, 5px 5px 0 #9ba6ba, 6px 6px 0 #8e9ab0, 7px 7px 0 #818ea6, 8px 8px 0 #74829c, 14px 20px 30px rgba(0,0,0,0.55); }
+      .quadro { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+      .placa { position: absolute; left: 50%; margin-left: -220px; width: 440px; padding: 38px; background: #fff; border-radius: 32px; }
+      .quem { position: absolute; left: 0; right: 0; text-align: center; font: 700 58px "Figtree", sans-serif; color: #fff; }
+      .quem small { display: block; margin-top: 8px; font: 400 38px "Figtree", sans-serif; color: #c2cad8; }
+      .zap { position: absolute; left: 110px; right: 110px; padding: 38px 0 42px; border-radius: 999px; background: var(--cor); text-align: center; font: 700 68px "Figtree", sans-serif; color: #fff; }
+      .zt { position: absolute; font: 400 200px/0.96 "Anton", sans-serif; color: #fff; text-transform: uppercase; text-shadow: 1px 1px 0 #cfd6e2, 2px 2px 0 #c2cad8, 3px 3px 0 #b5bece, 4px 4px 0 #a8b2c4, 5px 5px 0 #9ba6ba, 6px 6px 0 #8e9ab0, 7px 7px 0 #818ea6, 8px 8px 0 #74829c, 14px 20px 30px rgba(0,0,0,0.55); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40.0" data-width="1080" data-height="1920">
+      <div id="a" class="cena clip" data-start="0" data-duration="3.18" data-track-index="1">
+        <canvas id="a-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="a-b" class="borrao" src="assets/fotos/1-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="a-k" class="k"></div><div id="a-t" class="t"></div><div id="a-s" class="s"></div></div>
+      </div>
+      <div id="b" class="cena clip" data-start="3.18" data-duration="3.0" data-track-index="2">
+        <canvas id="b-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="b-b" class="borrao" src="assets/fotos/2-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="b-k" class="k"></div><div id="b-t" class="t"></div><div id="b-s" class="s"></div></div>
+      </div>
+      <div id="c" class="cena clip" data-start="6.18" data-duration="3.0" data-track-index="1">
+        <canvas id="c-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="c-b" class="borrao" src="assets/fotos/3-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="c-k" class="k"></div><div id="c-t" class="t"></div><div id="c-s" class="s"></div></div>
+      </div>
+      <div id="e" class="cena clip" data-start="9.18" data-duration="3.0" data-track-index="2">
+        <canvas id="e-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="e-b" class="borrao" src="assets/fotos/4-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="e-k" class="k"></div><div id="e-t" class="t"></div><div id="e-s" class="s"></div></div>
+      </div>
+      <div id="f" class="cena clip" data-start="12.18" data-duration="3.0" data-track-index="1">
+        <canvas id="f-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="f-b" class="borrao" src="assets/fotos/5-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="f-k" class="k"></div><div id="f-t" class="t"></div><div id="f-s" class="s"></div></div>
+      </div>
+      <div id="g" class="cena clip" data-start="15.18" data-duration="3.0" data-track-index="2">
+        <canvas id="g-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="g-b" class="borrao" src="assets/fotos/6-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="g-k" class="k"></div><div id="g-t" class="t"></div><div id="g-s" class="s"></div></div>
+      </div>
+      <div id="h" class="cena clip" data-start="18.18" data-duration="3.0" data-track-index="1">
+        <canvas id="h-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="h-b" class="borrao" src="assets/fotos/7-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="h-k" class="k"></div><div id="h-t" class="t"></div><div id="h-s" class="s"></div></div>
+      </div>
+      <div id="i" class="cena clip" data-start="21.18" data-duration="3.0" data-track-index="2">
+        <canvas id="i-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="i-b" class="borrao" src="assets/fotos/8-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="i-k" class="k"></div><div id="i-t" class="t"></div><div id="i-s" class="s"></div></div>
+      </div>
+      <div id="j" class="cena clip" data-start="24.18" data-duration="3.0" data-track-index="1">
+        <canvas id="j-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="j-b" class="borrao" src="assets/fotos/9-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="j-k" class="k"></div><div id="j-t" class="t"></div><div id="j-s" class="s"></div></div>
+      </div>
+      <div id="k" class="cena clip" data-start="27.18" data-duration="3.0" data-track-index="2">
+        <canvas id="k-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="k-b" class="borrao" src="assets/fotos/10-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="k-k" class="k"></div><div id="k-t" class="t"></div><div id="k-s" class="s"></div></div>
+      </div>
+      <div id="l" class="cena clip" data-start="30.18" data-duration="3.0" data-track-index="1">
+        <canvas id="l-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="l-b" class="borrao" src="assets/fotos/11-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="l-k" class="k"></div><div id="l-t" class="t"></div><div id="l-s" class="s"></div></div>
+      </div>
+      <div id="n" class="cena clip" data-start="33.18" data-duration="3.0" data-track-index="2">
+        <canvas id="n-gl" class="gl" width="1080" height="1920" style="left: 0; top: 0; width: 1080px; height: 1920px"></canvas>
+        <img id="n-b" class="borrao" src="assets/fotos/12-b.jpg" alt="" />
+        <div class="veu"></div>
+        <div class="palco"><div id="n-k" class="k"></div><div id="n-t" class="t"></div><div id="n-s" class="s"></div></div>
+      </div>
+      <div id="z" class="cena clip" data-start="36.18" data-duration="3.82" data-track-index="2">
+        <img id="z-b" class="borrao" src="assets/fotos/1-b.jpg" alt="" style="opacity: 0.45" /><div class="veu" style="display: block; left: 0; top: 0; right: 0; height: 1920px; border-radius: 0; background: rgba(5,9,18,0.72)"></div>
+        <div id="z-l" class="placa" style="top: 240px"></div>
+        <div class="palco"><div id="z-t" class="zt" style="top: 640px; left: 60px; right: 60px; text-align: center; font-size: 200px"></div></div>
+        <div id="z-q" class="quem" style="top: 1230px"><span id="z-q1"></span><small id="z-q2"></small></div>
+        <div id="z-z" class="zap" style="top: 1430px"></div>
+      </div>
+      <div id="p" class="barra clip" data-start="0" data-duration="36.18" data-track-index="8"></div>
+      <div id="m" class="marca clip" style="right: 50px; top: 60px" data-start="0" data-duration="36.18" data-track-index="6"></div>
+      <div id="r" class="ressalva clip" data-start="0" data-duration="36.18" data-track-index="7"></div>
+      <audio id="trilha" src="assets/bgm/pulso40.m4a" data-start="0" data-duration="40.0" data-volume="0.5" data-track-index="11"></audio>
+      <audio id="sfx-00" src="assets/sfx/impacto.m4a" data-start="0.4" data-duration="1.00" data-volume="0.8" data-track-index="12"></audio>
+      <audio id="sfx-01" src="assets/sfx/vento.m4a" data-start="2.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-02" src="assets/sfx/clique.m4a" data-start="3.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-03" src="assets/sfx/vento.m4a" data-start="5.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-04" src="assets/sfx/clique.m4a" data-start="6.6" data-duration="0.07" data-volume="0.45" data-track-index="12"></audio>
+      <audio id="sfx-05" src="assets/sfx/vento.m4a" data-start="8.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-06" src="assets/sfx/clique.m4a" data-start="9.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-07" src="assets/sfx/vento.m4a" data-start="11.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-08" src="assets/sfx/clique.m4a" data-start="12.6" data-duration="0.07" data-volume="0.45" data-track-index="12"></audio>
+      <audio id="sfx-09" src="assets/sfx/vento.m4a" data-start="14.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-10" src="assets/sfx/clique.m4a" data-start="15.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-11" src="assets/sfx/vento.m4a" data-start="17.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-12" src="assets/sfx/clique.m4a" data-start="18.6" data-duration="0.07" data-volume="0.45" data-track-index="12"></audio>
+      <audio id="sfx-13" src="assets/sfx/vento.m4a" data-start="20.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-14" src="assets/sfx/clique.m4a" data-start="21.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-15" src="assets/sfx/vento.m4a" data-start="23.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-16" src="assets/sfx/clique.m4a" data-start="24.6" data-duration="0.07" data-volume="0.45" data-track-index="12"></audio>
+      <audio id="sfx-17" src="assets/sfx/vento.m4a" data-start="26.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-18" src="assets/sfx/clique.m4a" data-start="27.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-19" src="assets/sfx/vento.m4a" data-start="29.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-20" src="assets/sfx/clique.m4a" data-start="30.6" data-duration="0.07" data-volume="0.45" data-track-index="12"></audio>
+      <audio id="sfx-21" src="assets/sfx/vento.m4a" data-start="32.85" data-duration="0.60" data-volume="0.6" data-track-index="13"></audio>
+      <audio id="sfx-22" src="assets/sfx/clique.m4a" data-start="33.6" data-duration="0.07" data-volume="0.45" data-track-index="14"></audio>
+      <audio id="sfx-23" src="assets/sfx/vento.m4a" data-start="35.85" data-duration="0.60" data-volume="0.6" data-track-index="15"></audio>
+      <audio id="sfx-24" src="assets/sfx/impacto.m4a" data-start="36.63" data-duration="1.00" data-volume="0.7" data-track-index="12"></audio>
+      <audio id="sfx-25" src="assets/sfx/estouro.m4a" data-start="37.78" data-duration="0.16" data-volume="0.5" data-track-index="13"></audio>
+    </div>
+    <div aria-hidden="true">
+      <img id="foto-1" class="fonte" src="assets/fotos/1.jpg" alt="" /><img id="prof-1" class="fonte" src="assets/fotos/1-p.png" alt="" />
+      <img id="foto-2" class="fonte" src="assets/fotos/2.jpg" alt="" /><img id="prof-2" class="fonte" src="assets/fotos/2-p.png" alt="" />
+      <img id="foto-3" class="fonte" src="assets/fotos/3.jpg" alt="" /><img id="prof-3" class="fonte" src="assets/fotos/3-p.png" alt="" />
+      <img id="foto-4" class="fonte" src="assets/fotos/4.jpg" alt="" /><img id="prof-4" class="fonte" src="assets/fotos/4-p.png" alt="" />
+      <img id="foto-5" class="fonte" src="assets/fotos/5.jpg" alt="" /><img id="prof-5" class="fonte" src="assets/fotos/5-p.png" alt="" />
+      <img id="foto-6" class="fonte" src="assets/fotos/6.jpg" alt="" /><img id="prof-6" class="fonte" src="assets/fotos/6-p.png" alt="" />
+      <img id="foto-7" class="fonte" src="assets/fotos/7.jpg" alt="" /><img id="prof-7" class="fonte" src="assets/fotos/7-p.png" alt="" />
+      <img id="foto-8" class="fonte" src="assets/fotos/8.jpg" alt="" /><img id="prof-8" class="fonte" src="assets/fotos/8-p.png" alt="" />
+      <img id="foto-9" class="fonte" src="assets/fotos/9.jpg" alt="" /><img id="prof-9" class="fonte" src="assets/fotos/9-p.png" alt="" />
+      <img id="foto-10" class="fonte" src="assets/fotos/10.jpg" alt="" /><img id="prof-10" class="fonte" src="assets/fotos/10-p.png" alt="" />
+      <img id="foto-11" class="fonte" src="assets/fotos/11.jpg" alt="" /><img id="prof-11" class="fonte" src="assets/fotos/11-p.png" alt="" />
+      <img id="foto-12" class="fonte" src="assets/fotos/12.jpg" alt="" /><img id="prof-12" class="fonte" src="assets/fotos/12-p.png" alt="" />
+    </div>
+    <!-- Dados de EXEMPLO. O gerador troca ESTE bloco pelos dados do pedido
+         (src/lib/video/modelo/contrato.ts, `preencherHtml`). -->
+    <script id="dados" type="application/json">{"selo":"Em construção","nome":"Reserva Barueri","lugar":{"principal":"Barueri","apoio":"Jardim Tupanci"},"gancho":"com 78 m²?","destaques":[{"grande":"2 ou 3","cor":"dorms","apoio":"com suíte e 2 vagas"},{"grande":"58 a 78","cor":"m²","apoio":"de área privativa"}],"preco":{"valor":"589","unidade":"mil"},"entrega":{"rotulo":"Entrega prevista","grande":"Dezembro","cor":"2027"},"extras":["Piscina","Academia","Salão de festas"],"corretor":"Ana Lima","creci":"CRECI 234800","fone":"(11) 99999-0000","ressalva":"Imagens meramente ilustrativas","outro":null,"marca":"Aretz Imobi","temLogo":false,"cor":"#17a36b","fotos":[{"aspecto":1.415,"rotulo":"Fachada"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Lazer"},{"aspecto":1.415,"rotulo":"Living"},{"aspecto":1.415,"rotulo":"Fachada"}]}</script>
+    <script src="assets/comum.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const d = E.d;
+      const a = E.animar(tl);
+      const [n1, n2] = E.nomeEmDuas();
+      const d0 = d.destaques[0], d1 = d.destaques[1];
+      const extras = d.extras || [];
+      const L = 900;
+      const por = (id, faixa, cima, baixo, apoio) => { E.texto(id + "-k", faixa); E.duas(id + "-t", cima, baixo, L); E.texto(id + "-s", apoio); };
+      const cenas = {
+        lugar: (id) => por(id, [d.selo, d.lugar.apoio].filter(Boolean).join(" · "), d.lugar.principal || d.nome, "", ""),
+        nome: (id) => por(id, "", n1, n2, ""),
+        isto: (id) => por(id, "Isto.", n1, n2, [d.lugar.principal, d.lugar.apoio].filter(Boolean).join(" · ")),
+        d0: (id) => por(id, "", d0 ? d0.grande : "", d0 ? d0.cor : "", d0 ? d0.apoio : ""),
+        d1: (id) => por(id, "", d1 ? d1.grande : "", d1 ? d1.cor : "", d1 ? d1.apoio : ""),
+        preco: (id) => { E.texto(id + "-k", d.preco ? "A partir de" : ""); E.preco(id + "-t", L || 900); E.texto(id + "-s", d.preco ? d.nome : ""); },
+        entrega: (id) => por(id, d.entrega ? d.entrega.rotulo : "", d.entrega ? d.entrega.grande : "", d.entrega ? d.entrega.cor : "", ""),
+        convite: (id) => por(id, "", "Vem", "conhecer", ""),
+        nada: (id) => por(id, "", "", "", ""),
+        adivinha: (id) => por(id, "", "Adivinha", "o preço", [d.nome, d.lugar.principal].filter(Boolean).join(" · ")),
+        palpite: (id) => por(id, "Quanto custa?", "Comenta", "o palpite", ""),
+        revela: (id) => { E.texto(id + "-k", d.preco ? "E o preço é…" : ""); if (!E.preco(id + "-t", L || 900)) por(id, "", "Chama", "e descobre", ""); else E.texto(id + "-s", d.nome); },
+        oque: (id) => por(id, "", d.preco ? "O que R$ " + d.preco.valor + " " + d.preco.unidade : "O que você", d.preco ? "compra aqui?" : "encontra aqui?", d.lugar.principal),
+        espera: (id) => por(id, "", "Espera", "até ver", "o melhor ficou para o final"),
+        guardada: (id) => por(id, [d.lugar.principal, d.lugar.apoio].filter(Boolean).join(" · "), n1, n2, ""),
+      };
+      // um diferencial por cena: a última palavra em destaque
+      const extra = (id, texto) => {
+        const partes = String(texto || "").split(" ").filter(Boolean);
+        por(id, texto ? "Tem também" : "", partes.slice(0, Math.max(1, partes.length - 1)).join(" "), partes.length > 1 ? partes[partes.length - 1] : "", "");
+      };
+      E.marca("m"); E.texto("r", d.ressalva);
+      E.duas("z-t", "Agende", "sua visita", 940);
+      E.marca("z-l"); E.texto("z-q1", d.corretor); E.texto("z-q2", d.creci); E.texto("z-z", d.fone);
+      cenas.lugar("a");
+      E.camera(tl, "a-gl", 1, 0, 3.18, { lado: 0.3, px: -0.011, py: 0.007, noite: 1, luz: -0.4 }, { lado: 0.5, zoom: 1.08, px: 0.016, py: -0.005, dolly: 0.13, luz: 1.7 });
+      tl.set("#a-b", { opacity: 0 }, 0);
+      tl.to("#a", { x: -1300, duration: 0.18, ease: "power2.in" }, 3.0); tl.fromTo("#a-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 3.0);
+      a.entra("#a-k", 0.45); a.t3d("#a-t", 0.6, 1.8, 1); a.sobe("#a-s", 1.3);
+      cenas.nome("b");
+      E.camera(tl, "b-gl", 2, 3.18, 3.0, { lado: 0.85, px: 0.019, py: 0.004, luz: 1.7 }, { lado: 0.15, zoom: 1.06, px: -0.019, py: -0.003, dolly: 0.12, luz: -0.4 });
+      tl.fromTo("#b", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 3.18); tl.fromTo("#b-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 3.18);
+      tl.to("#b", { x: -1300, duration: 0.18, ease: "power2.in" }, 6.0); tl.fromTo("#b-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 6.0);
+      a.entra("#b-k", 3.63); a.t3d("#b-t", 3.78, 1.8, -1); a.sobe("#b-s", 4.48);
+      cenas.d0("c");
+      E.camera(tl, "c-gl", 3, 6.18, 3.0, { lado: 0.3, zoom: 1.0, px: -0.011, py: 0.012 }, { lado: 0.6, zoom: 1.12, px: 0.011, py: -0.012, dolly: 0.14, luz: 1.7 });
+      tl.fromTo("#c", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 6.18); tl.fromTo("#c-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 6.18);
+      tl.to("#c", { x: -1300, duration: 0.18, ease: "power2.in" }, 9.0); tl.fromTo("#c-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 9.0);
+      a.entra("#c-k", 6.63); a.t3d("#c-t", 6.78, 1.8, 1); a.sobe("#c-s", 7.48);
+      extra("e", extras[0]);
+      E.camera(tl, "e-gl", 4, 9.18, 3.0, { lado: 0.6, zoom: 1.14, px: 0.012 }, { lado: 0.4, zoom: 1.0, px: -0.012, dolly: 0.0 });
+      tl.fromTo("#e", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 9.18); tl.fromTo("#e-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 9.18);
+      tl.to("#e", { x: -1300, duration: 0.18, ease: "power2.in" }, 12.0); tl.fromTo("#e-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 12.0);
+      a.entra("#e-k", 9.63); a.t3d("#e-t", 9.78, 1.8, -1); a.sobe("#e-s", 10.48);
+      cenas.d1("f");
+      E.camera(tl, "f-gl", 5, 12.18, 3.0, { lado: 0.15, px: -0.019 }, { lado: 0.85, zoom: 1.06, px: 0.019, py: -0.004, dolly: 0.12, luz: 1.7 });
+      tl.fromTo("#f", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 12.18); tl.fromTo("#f-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 12.18);
+      tl.to("#f", { x: -1300, duration: 0.18, ease: "power2.in" }, 15.0); tl.fromTo("#f-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 15.0);
+      a.entra("#f-k", 12.63); a.t3d("#f-t", 12.78, 1.8, 1); a.sobe("#f-s", 13.48);
+      extra("g", extras[1]);
+      E.camera(tl, "g-gl", 6, 15.18, 3.0, { lado: 0.85, px: 0.019, py: 0.004, luz: 1.7 }, { lado: 0.15, zoom: 1.06, px: -0.019, py: -0.003, dolly: 0.12, luz: -0.4 });
+      tl.fromTo("#g", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 15.18); tl.fromTo("#g-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 15.18);
+      tl.to("#g", { x: -1300, duration: 0.18, ease: "power2.in" }, 18.0); tl.fromTo("#g-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 18.0);
+      a.entra("#g-k", 15.63); a.t3d("#g-t", 15.78, 1.8, -1); a.sobe("#g-s", 16.48);
+      extra("h", extras[2]);
+      E.camera(tl, "h-gl", 7, 18.18, 3.0, { lado: 0.3, zoom: 1.0, px: -0.011, py: 0.012 }, { lado: 0.6, zoom: 1.12, px: 0.011, py: -0.012, dolly: 0.14, luz: 1.7 });
+      tl.fromTo("#h", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 18.18); tl.fromTo("#h-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 18.18);
+      tl.to("#h", { x: -1300, duration: 0.18, ease: "power2.in" }, 21.0); tl.fromTo("#h-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 21.0);
+      a.entra("#h-k", 18.63); a.t3d("#h-t", 18.78, 1.8, 1); a.sobe("#h-s", 19.48);
+      cenas.preco("i");
+      E.camera(tl, "i-gl", 8, 21.18, 3.0, { lado: 0.6, zoom: 1.14, px: 0.012 }, { lado: 0.4, zoom: 1.0, px: -0.012, dolly: 0.0 });
+      tl.fromTo("#i", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 21.18); tl.fromTo("#i-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 21.18);
+      tl.to("#i", { x: -1300, duration: 0.18, ease: "power2.in" }, 24.0); tl.fromTo("#i-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 24.0);
+      a.entra("#i-k", 21.63); a.t3d("#i-t", 21.78, 1.8, -1); a.sobe("#i-s", 22.48);
+      a.conta("i-t", 21.78);
+      extra("j", extras[3]);
+      E.camera(tl, "j-gl", 9, 24.18, 3.0, { lado: 0.15, px: -0.019 }, { lado: 0.85, zoom: 1.06, px: 0.019, py: -0.004, dolly: 0.12, luz: 1.7 });
+      tl.fromTo("#j", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 24.18); tl.fromTo("#j-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 24.18);
+      tl.to("#j", { x: -1300, duration: 0.18, ease: "power2.in" }, 27.0); tl.fromTo("#j-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 27.0);
+      a.entra("#j-k", 24.63); a.t3d("#j-t", 24.78, 1.8, 1); a.sobe("#j-s", 25.48);
+      cenas.entrega("k");
+      E.camera(tl, "k-gl", 10, 27.18, 3.0, { lado: 0.85, px: 0.019, py: 0.004, luz: 1.7 }, { lado: 0.15, zoom: 1.06, px: -0.019, py: -0.003, dolly: 0.12, luz: -0.4 });
+      tl.fromTo("#k", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 27.18); tl.fromTo("#k-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 27.18);
+      tl.to("#k", { x: -1300, duration: 0.18, ease: "power2.in" }, 30.0); tl.fromTo("#k-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 30.0);
+      a.entra("#k-k", 27.63); a.t3d("#k-t", 27.78, 1.8, -1); a.sobe("#k-s", 28.48);
+      extra("l", extras[4]);
+      E.camera(tl, "l-gl", 11, 30.18, 3.0, { lado: 0.3, zoom: 1.0, px: -0.011, py: 0.012 }, { lado: 0.6, zoom: 1.12, px: 0.011, py: -0.012, dolly: 0.14, luz: 1.7 });
+      tl.fromTo("#l", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 30.18); tl.fromTo("#l-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 30.18);
+      tl.to("#l", { x: -1300, duration: 0.18, ease: "power2.in" }, 33.0); tl.fromTo("#l-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 33.0);
+      a.entra("#l-k", 30.63); a.t3d("#l-t", 30.78, 1.8, 1); a.sobe("#l-s", 31.48);
+      cenas.convite("n");
+      E.camera(tl, "n-gl", 12, 33.18, 3.0, { lado: 0.6, zoom: 1.14, px: 0.012 }, { lado: 0.4, zoom: 1.0, px: -0.012, dolly: 0.0 });
+      tl.fromTo("#n", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 33.18); tl.fromTo("#n-b", { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none" }, 33.18);
+      tl.to("#n", { x: -1300, duration: 0.18, ease: "power2.in" }, 36.0); tl.fromTo("#n-b", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none" }, 36.0);
+      a.entra("#n-k", 33.63); a.t3d("#n-t", 33.78, 1.8, -1); a.sobe("#n-s", 34.48);
+      tl.fromTo("#z", { x: 1300 }, { x: 0, duration: 0.2, ease: "power2.out" }, 36.18);
+      tl.fromTo("#z-l", { opacity: 0, y: -80 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.6)" }, 36.48);
+      a.t3d("#z-t", 36.63, 2.4, 0.4); a.sobe("#z-q", 37.48); a.pop("#z-z", 37.78); a.pulsa("#z-z", 38.38, 4);
+      // a barra do topo anda o vídeo inteiro: quem assiste vê quanto falta
+      tl.fromTo("#p", { scaleX: 0 }, { scaleX: 1, duration: 36.18, ease: "none" }, 0);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

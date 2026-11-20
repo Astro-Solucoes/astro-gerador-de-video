@@ -1,0 +1,103 @@
+# O gerador de vídeo do CRM da Astro.
+#
+# Este repositório é PÚBLICO de propósito: repositório público tem minutos de
+# GitHub Actions gratuitos, e o gerador é o que mais gasta minuto. Ele contém
+# só o gerador empacotado (`worker.mjs`), os modelos de vídeo e este workflow.
+# Nada aqui é editado à mão: tudo é saída de `scripts/video/gerador/empacotar.mjs`
+# no repositório do CRM. Mudou o gerador ou um modelo lá, empacota e publica de novo.
+#
+# Dois gatilhos, com papéis diferentes:
+#   workflow_dispatch  o CAMINHO PRINCIPAL: o painel aciona assim que o vídeo
+#                      entra na fila.
+#   schedule           rede de segurança, de hora em hora, para o que o
+#                      acionamento direto perdeu.
+#
+# Segredos que ele precisa (Settings → Secrets and variables → Actions):
+#   SUPABASE_SECRET_KEY       a chave de serviço do banco
+#   NEXT_PUBLIC_SUPABASE_URL  o endereço do projeto
+#
+# Os registros de um repositório público são públicos: o gerador só imprime
+# o identificador do pedido, o modelo e o tempo. Nunca imprimir dado de
+# cliente aqui.
+
+name: Render de vídeo
+
+on:
+  workflow_dispatch:
+    inputs:
+      quantos:
+        description: "Quantos vídeos processar nesta execução"
+        required: false
+        default: "3"
+  schedule:
+    - cron: "0 * * * *"
+
+concurrency:
+  # Nunca dois geradores ao mesmo tempo: a trava no banco impede que peguem o
+  # MESMO pedido, mas dois disputando a máquina ficam os dois mais lentos.
+  group: render-video
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    # Um vídeo de 40 s leva perto de 8 minutos; 45 cobre um lote de 3 com folga.
+    timeout-minutes: 45
+    steps:
+      - name: Há vídeo na fila?
+        # Antes de instalar qualquer coisa: fila vazia é o caso normal do
+        # agendamento. Conta o que espera e o que ficou travado por um gerador
+        # morto. Se a consulta falhar, segue como se houvesse fila.
+        id: fila
+        env:
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        run: |
+          if [ -z "$SUPABASE_SECRET_KEY" ] || [ -z "$NEXT_PUBLIC_SUPABASE_URL" ]; then
+            echo "::error::Faltam os segredos SUPABASE_SECRET_KEY e NEXT_PUBLIC_SUPABASE_URL neste repositório."
+            exit 1
+          fi
+          resposta=$(curl -sS --max-time 20 \
+            -H "apikey: $SUPABASE_SECRET_KEY" -H "Authorization: Bearer $SUPABASE_SECRET_KEY" \
+            "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/video_jobs?select=id&status=in.(pendente,renderizando)&limit=1" || echo "falhou")
+          if [ "$resposta" = "[]" ]; then
+            echo "tem=nao" >> "$GITHUB_OUTPUT"
+            echo "Fila vazia: nada a fazer."
+          else
+            echo "tem=sim" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        if: steps.fila.outputs.tem == 'sim'
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        if: steps.fila.outputs.tem == 'sim'
+        with:
+          node-version: 22
+
+      - name: Instalar ffmpeg
+        if: steps.fila.outputs.tem == 'sim'
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Profundidade das fotos
+        # Cada foto ganha um mapa de profundidade (MiDaS small, licença MIT)
+        # para a câmera se mover dentro dela. Sem isto o vídeo sai igual, só
+        # que com a foto plana: nada aqui pode derrubar o gerador.
+        if: steps.fila.outputs.tem == 'sim'
+        continue-on-error: true
+        run: |
+          python3 -m pip install --quiet --user onnxruntime pillow numpy
+          mkdir -p "$HOME/.cache/astro"
+          curl -sSL --retry 3 --max-time 120 -o "$HOME/.cache/astro/midas-small.onnx" \
+            https://github.com/isl-org/MiDaS/releases/download/v2_1/model-small.onnx
+          test "$(stat -c %s "$HOME/.cache/astro/midas-small.onnx")" -gt 60000000
+
+      - name: Esvaziar a fila
+        if: steps.fila.outputs.tem == 'sim'
+        env:
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+        run: node worker.mjs "${{ inputs.quantos || '3' }}"
